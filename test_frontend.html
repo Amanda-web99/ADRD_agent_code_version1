@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADRD Diagnosis Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .panel {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        .panel h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: "Monaco", "Courier New", monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            margin-top: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .result {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .result-item {
+            margin-bottom: 12px;
+        }
+        .result-label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        .result-value {
+            color: #667eea;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        .confidence-bar {
+            width: 100%;
+            height: 6px;
+            background: #ddd;
+            border-radius: 3px;
+            margin-top: 4px;
+            overflow: hidden;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        .error {
+            background: #fee;
+            border-left: 4px solid #f44;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            color: #c33;
+        }
+        .success {
+            background: #efe;
+            border-left: 4px solid #4f4;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            color: #3a3;
+        }
+        .evidence-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .evidence-section h4 {
+            color: #667eea;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        .evidence-list {
+            list-style: none;
+        }
+        .evidence-list li {
+            padding: 8px;
+            background: white;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #555;
+            border-left: 2px solid #667eea;
+            padding-left: 12px;
+        }
+        .evidence-clickable {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .evidence-clickable:hover {
+            background: #eef2ff;
+            border-left-color: #4f46e5;
+        }
+        .context-preview {
+            margin-top: 12px;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            background: #f8fafc;
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .context-preview .hit {
+            background: #fde68a;
+            border-radius: 3px;
+            padding: 1px 2px;
+            font-weight: 600;
+        }
+        .hint {
+            margin-top: 8px;
+            color: #64748b;
+            font-size: 12px;
+        }
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 ADRD Diagnosis Tool</h1>
+            <p>Alzheimer's Disease and Related Dementias Analysis</p>
+        </div>
+
+        <div class="content">
+            <!-- Input Panel -->
+            <div class="panel">
+                <h2>Clinical Note</h2>
+                <textarea id="noteText" placeholder="Paste your clinical note here...
+
+Example:
+72-year-old patient with progressive memory loss over 8 months. Cognitive tests show MMSE score 18. MRI imaging reveals hippocampal atrophy. Patient is currently on Donepezil."></textarea>
+                <button id="analyzeBtn" onclick="analyzeNote()">Analyze</button>
+                <div id="loading" style="display: none;" class="loading">
+                    <span class="spinner"></span> Processing...
+                </div>
+                <div id="contextPreview" class="context-preview" style="display: none;"></div>
+                <div class="hint">Tip: click evidence on the right to jump and highlight source text.</div>
+            </div>
+
+            <!-- Result Panel -->
+            <div class="panel">
+                <h2>Analysis Result</h2>
+                <div id="resultContainer" style="color: #999; text-align: center; padding-top: 50px;">
+                    Enter a clinical note and click "Analyze" to see results
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8002/analyze_text';
+        let currentEvidence = [];
+        let currentSections = [];
+
+        async function analyzeNote() {
+            const noteText = document.getElementById('noteText').value.trim();
+            const resultContainer = document.getElementById('resultContainer');
+            const loadingDiv = document.getElementById('loading');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+
+            if (!noteText) {
+                resultContainer.innerHTML = '<div class="error">❌ Please enter a clinical note</div>';
+                return;
+            }
+
+            // Show loading state
+            loadingDiv.style.display = 'block';
+            analyzeBtn.disabled = true;
+            resultContainer.innerHTML = '';
+            
+            console.log('📤 Sending request to:', API_URL);
+            console.log('📝 Note length:', noteText.length);
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain',
+                    },
+                    body: noteText
+                });
+
+                console.log('📥 Response status:', response.status);
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('❌ Error response:', errorText);
+                    throw new Error(`API error: ${response.status} - ${errorText}`);
+                }
+
+                const result = await response.json();
+                console.log('✅ Received result:', result);
+                displayResult(result);
+            } catch (error) {
+                console.error('🚨 Error:', error);
+                resultContainer.innerHTML = `
+                    <div class="error">
+                        ❌ Error: ${error.message}<br>
+                        <small>Make sure backend is running at ${API_URL}</small>
+                        <br><small style="color: #666; margin-top: 10px;">Check browser console (F12) for details</small>
+                    </div>
+                `;
+            } finally {
+                loadingDiv.style.display = 'none';
+                analyzeBtn.disabled = false;
+            }
+        }
+
+        function displayResult(result) {
+            const resultContainer = document.getElementById('resultContainer');
+            currentEvidence = Array.isArray(result.evidence) ? result.evidence : [];
+            currentSections = Array.isArray(result.sections) ? result.sections : [];
+            
+            const adrddx = result.adrddx || 'Unknown';
+            const subtype = result.subtype || 'Unknown';
+            const confidence = result.confidence || 0;
+
+            let html = `
+                <div class="success">
+                    ✅ Analysis Complete
+                </div>
+                <div class="result">
+                    <div class="result-item">
+                        <div class="result-label">ADRD Diagnosis</div>
+                        <div class="result-value">${adrddx}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Subtype</div>
+                        <div class="result-value">${subtype}</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-label">Confidence</div>
+                        <div class="result-value">${confidence}%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: ${confidence}%"></div>
+                        </div>
+                    </div>
+            `;
+
+            // Add evidence if available
+            if (result.evidence && result.evidence.length > 0) {
+                html += `
+                    <div class="evidence-section">
+                        <h4>📋 Key Evidence (click to locate in note)</h4>
+                        <ul class="evidence-list">
+                            ${result.evidence.slice(0, 8).map((ev, idx) => `
+                                <li class="evidence-clickable" data-eidx="${idx}"><strong>${ev.title}</strong> (${ev.strength}): "${ev.quote}"</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add sections (skills pipeline)
+            if (result.sections && result.sections.length > 0) {
+                html += `
+                    <div class="evidence-section">
+                        <h4>🧭 Note Sections (click to navigate)</h4>
+                        <ul class="evidence-list">
+                            ${result.sections.map((sec, idx) => `<li class="evidence-clickable" data-sidx="${idx}"><strong>${sec.title}</strong> [${sec.start}-${sec.end}]</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add cognitive tests if available
+            if (result.cognitive_tests && result.cognitive_tests.length > 0) {
+                html += `
+                    <div class="evidence-section">
+                        <h4>🧠 Cognitive Tests</h4>
+                        <ul class="evidence-list">
+                            ${result.cognitive_tests.map(test => `<li>${test}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add medications if available
+            if (result.adrd_meds && result.adrd_meds.length > 0) {
+                html += `
+                    <div class="evidence-section">
+                        <h4>💊 ADRD Medications</h4>
+                        <ul class="evidence-list">
+                            ${result.adrd_meds.map(med => `<li>${med}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Add pipeline metadata
+            if (result.meta) {
+                html += `
+                    <div class="evidence-section">
+                        <h4>⚙️ Pipeline Meta</h4>
+                        <ul class="evidence-list">
+                            <li><strong>Model:</strong> ${result.meta.model || 'N/A'}</li>
+                            <li><strong>LLM Called:</strong> ${String(result.meta.llm_called)}</li>
+                            <li><strong>Token Total:</strong> ${result.meta.token_total ?? 0}</li>
+                            <li><strong>Pipeline:</strong> ${result.meta.pipeline_version || 'N/A'}</li>
+                            <li><strong>Prompt:</strong> ${result.meta.prompt_version || 'N/A'}</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            html += '</div>';
+            resultContainer.innerHTML = html;
+            console.log('✅ Result displayed in UI');
+        }
+
+        function jumpToEvidence(index) {
+            const ev = currentEvidence[index];
+            if (!ev) return;
+
+            const textarea = document.getElementById('noteText');
+            const preview = document.getElementById('contextPreview');
+            const note = textarea.value || '';
+
+            let start = ev?.highlight?.start;
+            let end = ev?.highlight?.end;
+
+            if (!Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end <= start || end > note.length) {
+                const quote = ev.quote || '';
+                const fallback = quote ? note.toLowerCase().indexOf(quote.toLowerCase()) : -1;
+                if (fallback >= 0) {
+                    start = fallback;
+                    end = fallback + quote.length;
+                } else {
+                    preview.style.display = 'block';
+                    preview.innerHTML = '⚠️ Could not locate this evidence in the current note text.';
+                    return;
+                }
+            }
+
+            textarea.focus();
+            textarea.setSelectionRange(start, end);
+
+            const lineHeight = 20;
+            const lineIndex = note.slice(0, start).split('\n').length - 1;
+            textarea.scrollTop = Math.max(0, (lineIndex - 3) * lineHeight);
+
+            const ctxPad = 120;
+            const ctxStart = Math.max(0, start - ctxPad);
+            const ctxEnd = Math.min(note.length, end + ctxPad);
+            const before = escapeHtml(note.slice(ctxStart, start));
+            const hit = escapeHtml(note.slice(start, end));
+            const after = escapeHtml(note.slice(end, ctxEnd));
+
+            preview.style.display = 'block';
+            preview.innerHTML = `
+                <div><strong>Selected evidence:</strong> ${escapeHtml(ev.title || 'Evidence')}</div>
+                <div style="margin-top: 6px;">...${before}<span class="hit">${hit}</span>${after}...</div>
+            `;
+        }
+
+        function jumpToSection(index) {
+            const section = currentSections[index];
+            if (!section) return;
+
+            const textarea = document.getElementById('noteText');
+            const preview = document.getElementById('contextPreview');
+            const note = textarea.value || '';
+
+            let start = Number(section.start);
+            let end = Number(section.end);
+
+            if (!Number.isInteger(start) || !Number.isInteger(end) || start < 0 || end <= start || end > note.length) {
+                preview.style.display = 'block';
+                preview.innerHTML = '⚠️ Section offset is out of range for current note text.';
+                return;
+            }
+
+            textarea.focus();
+            textarea.setSelectionRange(start, end);
+
+            const lineHeight = 20;
+            const lineIndex = note.slice(0, start).split('\n').length - 1;
+            textarea.scrollTop = Math.max(0, (lineIndex - 2) * lineHeight);
+
+            const sectionText = note.slice(start, Math.min(end, start + 260));
+            preview.style.display = 'block';
+            preview.innerHTML = `
+                <div><strong>Section:</strong> ${escapeHtml(section.title || 'Unknown')}</div>
+                <div style="margin-top: 6px;">${escapeHtml(sectionText)}${end - start > 260 ? '...' : ''}</div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Allow Enter key to analyze
+        document.getElementById('noteText').addEventListener('keydown', function(e) {
+            if (e.metaKey && e.key === 'Enter') {
+                analyzeNote();
+            }
+        });
+
+        document.getElementById('resultContainer').addEventListener('click', function(e) {
+            const target = e.target.closest('[data-eidx]');
+            if (target) {
+                const index = Number(target.dataset.eidx);
+                if (!Number.isNaN(index)) {
+                    jumpToEvidence(index);
+                }
+                return;
+            }
+
+            const secTarget = e.target.closest('[data-sidx]');
+            if (secTarget) {
+                const secIndex = Number(secTarget.dataset.sidx);
+                if (!Number.isNaN(secIndex)) {
+                    jumpToSection(secIndex);
+                }
+            }
+        });
+        
+        console.log('🔧 Frontend loaded. API endpoint:', API_URL);
+    </script>
+</body>
+</html>
