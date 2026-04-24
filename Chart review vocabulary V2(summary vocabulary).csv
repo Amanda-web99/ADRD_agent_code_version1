@@ -1,0 +1,23 @@
+Type,Model,Entity
+history,[History of Present Illness][Past Medical History][social history] family history] ][ Brief Hospital Course],"dementia, Fall(Functional Decline), memory, lethargy/altered mental status, CVA(CVA supports vascular contribution to dementia), confusion, Gait disturbance” and “Urinary incontinence.”, stroke, bedridden, not coherently."
+lab,[pertinent results],"B12, Thyroid, TSH/T4, RPR/HIV , A??tau"
+prescriptions,Text[Medications on Admission][ Discharge Medications][ Discharge Instructions][ Brief Hospital Course],"Donepezil?Aricept?, Memantine?Namenda?, Galantamine, Rivastigmine?Exelon?,Trazodone (behavioral/sleep symptoms in dementia), levodopa"
+radiology,Text[Pertinent results] [CT Head][ Chest X-ray],"Atrophy, cortical atrophy, Cerebral Atrophy, Hippocampal atrophy, White matter changes, chronic white matter microangiopathy"
+physical exam,physical exam,"impaired, cognitive impairment, redirection, delirium, Oriented to person and place, speech is very dysarthric and for the most part unintelligible… follows simple commands. confabulation, unable to answer questions"
+Clinical Cognitive Signals,physical exam,impaired/ cognitive impairment/ Chronic cognitive impairment
+,,"Confused at baseline/ Cognitive decline/ Increasing confusion
+"
+,,"Memory problems/ Memory impairment/ Worsening memory
+"
+,, redirection/speech is very dysarthri/ unable to answer questions/ Not making sense when speaking
+,,"Oriented to self only/ Oriented x1/ Oriented to person and place
+"
+Others,[Brief Hospital Course][Discharge Condition],"mental status(confused, agitation, paranoia, agitated), Sleep(sleep-wake cycle)."
+Cognitive Test,,Mini-Mental State Examination / MME/ Mini Mental/ Mini-Mental/ Mini Mental Status/ Folstein test/ MMS (rare)
+,,Montreal Cognitive Assessment/ MoCA/ MOCA/ Montreal Cognitive/ Montreal Assessment/ MoCA-B
+,,Mini-Cog/ MiniCog/ Mini-Cog/ mini cog/ Clock recall test/ Clock drawing
+,,SLUMS / S.L.U.M.S / Saint Louis University Mental Status / Saint Louis Mental Status
+,,AD8 / AD-8 / AD8 questionnaire / AD8 Dementia Screening
+,,SAGE / Self-Administered Gerocognitive Exam / Self Administered Memory Test
+,,BIMS / Brief Interview for Mental Status
+,,CDR / Clinical Dementia Rating / CDR global

@@ -1,0 +1,262 @@
+Name:  ___                    Unit No:   ___
+ 
+Admission Date:  ___              Discharge Date:   ___
+ 
+Date of Birth:  ___             Sex:   F
+ 
+Service: MEDICINE
+ 
+Allergies: 
+Patient recorded as having No Known Allergies to Drugs
+ 
+Attending: ___.
+ 
+Chief Complaint:
+Fall
+ 
+Major Surgical or Invasive Procedure:
+None
+
+ 
+History of Present Illness:
+___ year old female presented to ED via EMS after a fall at home. 
+ Patient reports that she went to answer the telephone and fell 
+to the ground.  She pressed lifeline and was brought in by 
+ambulance.  Patient denies complaints except to say that she is 
+frightened of being in this "remote" area of the hospital.  She 
+denies pain, chest pain, shortness of breath.  She is unable to 
+provide any further history including any past medical history 
+or medication lists.  
+.
+In the ED there were no signs of injury.  A CT head revealed 
+bilateral SDHs which were confirmed to be chronic by patient's 
+daughter.  Given aspirin and lopressor.
+ 
+Past Medical History:
+HTN
+chronic SDH
+Sick sinus syndrome s/p PPM
+A-fib
+Aortic Insufficiency
+Chronic Kidney Disease, Stage III
+
+ 
+Social History:
+___
+Family History:
+N/C
+ 
+Physical Exam:
+VITAL SIGNS:
+Temperature 96.5
+Blood pressure 160/55
+Heart rate 62
+Resp rate 16
+Sat 94%RA
+GENERAL:  Elderly female in no acute distress.
+HEENT:  Sclerae anicteric.  Pupils slightly irregular shape but 
+round and reactive to light.  Oropharynx is clear without 
+lesions or thrush.
+NECK:  Supple, without lymphadenopathy.
+LUNGS:  Clear to auscultation and percussion bilaterally. No 
+rhonchi, rales or wheezes.
+HEART:  Regular rate and rhythm. III/VI SM RUSB.  III/VI DM LSB
+ABDOMEN:  Soft, nontender, nondistended, normal bowel sounds.
+EXTREMITIES:  No cyanosis, clubbing, edema. No pain with 
+movement of knee/hip joints.  No signs of injury 
+SKIN:  No rash.
+NEURO: A/A Ox3
+ 
+Pertinent Results:
+Admit Labs/Studies:
+--------------------
+UA: ___ RBC, ___ WBC
+.
+Trop-T: 0.02  
+.
+139 / 104 / 36    gluc  95   
+----------------
+5.0 / 28 / 1.4  
+.  
+CK: 74  MB: Notdone
+.
+Dig: 0.5 
+.
+WBC 71.  HCT  35.3  PLT 146 
+ N:75.8 L:15.8 M:5.7 E:2.3 Bas:0.5 
+.
+___: 13.7  PTT: 33.3  INR: 1.2  
+.
+CXR: Left-sided pacer is seen with leads overlying the right 
+atrium and ventricle. Cardiac silhouette appears unremarkable.  
+The aorta appears tortuous.  No focal consolidations or pleural 
+effusions are identified.  Slightly prominent interstitial 
+pattern is seen, likely chronic, without evidence of frank 
+pulmonary edema.  Severe levoscoliosis of the thoracolumbar 
+spine identified. 
+.
+Pelvis: No definite fracture or dislocation identified. 
+Assessment of the sacrum and lumbar spines limited by overlying 
+bowel gas and a large amount of stool.  The pubic symphysis 
+appears grossly unremarkable. 
+.
+NCHCT: Chronic bilateral subdural hematomas, left greater than 
+right, with mild rightward shift.  No evidence of acute 
+hemorrhage. Sinus mucosal disease with aerosolized secretions 
+within the sphenoid sinus. 
+.
+EKG: No prior. A-paced. PRWP.  TWI aVL. LVH.
+.
+Other Labs:
+-----------
+___ 07:45AM BLOOD WBC-5.8 RBC-3.83* Hgb-12.6 Hct-37.3 
+MCV-97 MCH-33.0* MCHC-33.9 RDW-13.8 Plt ___
+___ 07:45AM BLOOD Glucose-86 UreaN-28* Creat-1.2* Na-140 
+K-4.2 Cl-104 HCO3-27 AnGap-13
+___ 08:10AM BLOOD VitB12-756 Folate-GREATER TH
+___ 08:10AM BLOOD TSH-4.5*
+___ 08:10AM BLOOD T4-5.9 calcTBG-1.04 TUptake-0.96 
+T4Index-5.7 Free T4-1.2
+___ 10:15PM BLOOD Digoxin-0.5*
+___ 07:45AM BLOOD Phenyto-12.4
+___ 08:10AM BLOOD Phenyto-18.5
+___ 10:15PM BLOOD Phenyto-21.1*
+.
+TTE (___):
+The left atrium is mildly dilated. There is moderate symmetric 
+left ventricular hypertrophy. The left ventricular cavity size 
+is normal. Overall left ventricular systolic function is normal 
+(LVEF>55%). Right ventricular chamber size and free wall motion 
+are normal. The aortic valve leaflets (3) are moderately 
+thickened. There is no aortic valve stenosis. Moderate to severe 
+(3+) aortic regurgitation is seen. The aortic regurgitation jet 
+is eccentric, directed toward the anterior mitral leaflet. The 
+mitral valve leaflets are mildly thickened. Mild (1+) mitral 
+regurgitation is seen. There is mild pulmonary artery systolic 
+hypertension. Significant pulmonic regurgitation is seen. There 
+is no pericardial effusion. 
+
+IMPRESSION: Suboptimal image quality. Moderate symmetric left 
+ventricular hypertrophy with preserved regional and global 
+biventricular sytolic function. Moderately thickened aortic 
+valve leaflets with moderate to severe aortic regurgitation. 
+Mild pulmonary hypertension.  
+ 
+Brief Hospital Course:
+___ year old woman presents after fall versus syncope.  
+.
+1) Mechanical Fall/Pre-syncope/Aortic Regurgitation/Sick Sinus 
+Syndrome s/p PPM:  
+No signs of injury.  Head CT with SDHs which look old per 
+NSURG/radiology.  EKG without ischemic changes.  Does have a 
+murmur on exam.  Had TTE which showed this was consistent with 
+3+ Aortic Insufficiency.  Has preserved systolic function.  
+Monitored on telemetry without event.  Ruled out for an MI.  Had 
+pacemaker ___ Sensia SEDRO1) interrogated on ___ by 
+EP service.  This did not show any events since last 
+interrogation (end of ___ and showed pacemaker was 
+functioning with adequate settings.  The patient was seen by 
+physical therapy who recommended placement in rehab given risk 
+of falling.  
+.
+2) Acute on Chronic Kidney Disease, Stage III:
+Unclear of  baseline Cr, but initially Cr was 1.4.  This 
+improved to 1.2 prior to discharge.  Renal function should be 
+followed carefully after discharge and patient should be 
+encouraged to drink adequate PO fluids.
+.
+3) Hypertension:
+Initially hypertensive.  This resolved after restarting home 
+meds.  Of note, Enalapril was given once a day during course of 
+admission, however patient is on med twice daily.  This was 
+restarted at home dose on discharge.
+.
+4) Subdural Hematomas
+Head CT indicated these seemed to be stable.  Was maintained on 
+dilantin, however initial level was supertherapeutic (corrected 
+for albumin/CrCl).  Dose was reduced to 100mg daily and then 
+stopped for one day.  On discharge day, level was in therapeutic 
+range and she was restarted on 100mg daily.  This level will 
+need to be followed closely on discharge.
+.
+5) Atrial Fibrillation
+She was paced during course of admission.  Underlying rhythm on 
+interrogation appears to be sinus.  She was continued on 
+B-blocker and digoxin.  Dig levels should be followed carefully 
+on discharge.  Goal would be lower level of therapeutic range 
+(0.4-0.8), though it is unclear if patient needs to continue on 
+this medication.  This should be discussed with outpatient 
+providers.
+.
+6) Likely dementia with question of acute delirium
+TSH was mildly elevated, however Free T4 was WNL (as above).  
+Likely sick euthyroid.  B12/Folate WNL.  Patient was followed by 
+the geriatrics consult service.  They recommended possible 
+follow up in ___ Memory clinic.  This is left to the 
+discretion of patient/family and PCP (number given on discharge 
+paperwork).  
+
+ 
+Medications on Admission:
+Lopressor 12.5mg bid
+Dilantin 200mg daily
+Digoxin 0.125mcg every other day
+Omeprazole 20mg daily
+MVI
+Enalapril 10mg bid
+
+ 
+Discharge Medications:
+1. Metoprolol Tartrate 25 mg Tablet Sig: 0.5 Tablet PO BID (2 
+times a day).  
+2. Omeprazole 20 mg Capsule, Delayed Release(E.C.) Sig: One (1) 
+Capsule, Delayed Release(E.C.) PO once a day.  
+3. Multivitamin,Tx-Minerals     Tablet Sig: One (1) Tablet PO 
+DAILY (Daily).  
+4. Enalapril Maleate 10 mg Tablet Sig: One (1) Tablet PO twice a 
+day.  
+5. Digoxin 125 mcg Tablet Sig: One (1) Tablet PO every other 
+day.  
+6. Phenytoin Sodium Extended 100 mg Capsule Sig: One (1) Capsule 
+PO DAILY (Daily): Will need to follow levels every ___ days 
+(corrected for albumin) and adjust dose to achieve corrected 
+level of ___.  
+7. Acetaminophen 325 mg Tablet Sig: Two (2) Tablet PO Q6H (every 
+6 hours) as needed for pain.  
+
+ 
+Discharge Disposition:
+Extended Care
+ 
+Facility:
+___
+ 
+Discharge Diagnosis:
+Presyncope
+s/p Fall, likely mechanical
+Subdural hematoma, chronic
+Sick Sinus Syndrome s/p pacemaker ___ Sensia SEDRO1)
+A-fib
+Aortic Regurgitation
+Hypertension
+Dementia
+Acute on Chronic Kidney Disease, Stage III
+
+ 
+Discharge Condition:
+Afebrile, vital signs stable.  AAOx3 (though does not know exact 
+date, knows month/year).
+
+ 
+Discharge Instructions:
+You were admitted due to a fall.  We did an evaluation of your 
+cardiac function (echocardiogram and pacemaker iand it does not 
+appear this contributed to your fall.  Your fall was likely due 
+to a loss in your balance.
+.
+Please call your primary care doctor or return to the emergency 
+room if you should have chest pain, shortness of breath, high 
+fever, or further falls.
+ 
+Followup Instructions:
+___
